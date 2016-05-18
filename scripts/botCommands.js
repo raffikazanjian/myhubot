@@ -18,5 +18,14 @@
 }*/
 
 module.exports = function(robot) {
-	
+	robot.respond(/Hi (.*), my name is Shuzaambot/i, function(message){
+		var name = message.match[1];
+		if (name == 'Raffi') {
+			return message.send('The force is strong with you!');
+		} else if (name == 'Yoda' || name == 'Obi Wan') {
+			return message.send('You are a Jedi knight!');
+		} else {
+			return message.reply('Hello ' + name + ', I am Shuzaambot');
+		}
+	})
 }
